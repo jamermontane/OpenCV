@@ -156,6 +156,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Imagejoint.h" />
     <ClInclude Include="ImageSurf.h" />
     <ClInclude Include="OpenCV.h" />
     <ClInclude Include="Resource.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Imagejoint.cpp" />
     <ClCompile Include="ImageSurf.cpp" />
     <ClCompile Include="OpenCV.cpp" />
     <ClCompile Include="stdafx.cpp">

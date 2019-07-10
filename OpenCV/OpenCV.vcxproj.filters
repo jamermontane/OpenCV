@@ -33,6 +33,9 @@
     <ClInclude Include="ImageSurf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Imagejoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ImageSurf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Imagejoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

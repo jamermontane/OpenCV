@@ -38,7 +38,7 @@ public:
 	~CImageSurf();
 
 public:
-	void Surf(std::string FN1, std::string FN2);
+	void Surf(std::string FN1, std::string FN2);  // 此方法可行，但图像必须有重叠部分 [7/10/2019 Administrator]
 
 	void Surf2(std::string FN1, std::string FN2);
 

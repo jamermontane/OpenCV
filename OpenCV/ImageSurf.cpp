@@ -93,7 +93,6 @@ void CImageSurf::OptimizeSeam(Mat& img1, Mat& trans, Mat& dst)
 
 		}
 	}
-
 }
 
 void CImageSurf::Surf(std::string FN1, std::string FN2)
@@ -177,7 +176,7 @@ void CImageSurf::Surf(std::string FN1, std::string FN2)
 
 
 	//创建拼接后的图,需提前计算图的大小
-	int dst_width = /*image01.cols + image02.cols;*/imageTransform1.cols;  //取最右点的长度为拼接图的长度
+	int dst_width = imageTransform1.cols/*image01.cols + image02.cols;*/;  //取最右点的长度为拼接图的长度
 	int dst_height = image02.rows;
 
 	Mat dst(dst_height, dst_width, CV_8UC3);
@@ -186,14 +185,37 @@ void CImageSurf::Surf(std::string FN1, std::string FN2)
 	imageTransform1.copyTo(dst(Rect(0, 0, imageTransform1.cols, imageTransform1.rows)));
 	image02.copyTo(dst(Rect(0, 0, image02.cols, image02.rows)));
 
+	imwrite("H1.jpg", image02);
+	imwrite("D1.jpg", dst);
+
 	imshow("b_dst", dst);
 
 
 	OptimizeSeam(image02, imageTransform1, dst);
 
+	imwrite("H2.jpg", image02);
+	imwrite("D2.jpg", dst);
 
 	imshow("dst", dst);
 	imwrite("dst.jpg", dst);
+
+
+// 	imageTransform1.copyTo(dst(Rect(0, 0, imageTransform1.cols, imageTransform1.rows)));
+// 	image02.copyTo(dst(Rect(imageTransform1.cols, 0, image02.cols, image02.rows)));
+// 
+// 	imwrite("H1.jpg", image02);
+// 	imwrite("D1.jpg", dst);
+// 
+// 	imshow("b_dst", dst);
+// 
+// 
+// 	OptimizeSeam(image02, imageTransform1, dst);
+// 
+// 	imwrite("H2.jpg", image02);
+// 	imwrite("D2.jpg", dst);
+// 
+// 	imshow("dst", dst);
+// 	imwrite("dst.jpg", dst);
 
 	waitKey();
 

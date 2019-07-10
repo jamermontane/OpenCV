@@ -28,6 +28,7 @@ using namespace cv;
 
 
 #include "ImageSurf.h"
+#include "Imagejoint.h"
 
 
 void ShowImage(std::string FileName)
@@ -70,11 +71,19 @@ int main()
         nRetCode = 1;
     }
 
+	CImagejoint ij;
+	vector<string> FNs;
+	FNs.clear();
+	for (int i = 0; i < 5; i++)
+	{
+		FNs.push_back("E:\\0.DEL\\1\\img_0_"+std::to_string(i+7)+"_100.bmp");
+	}
+
+	ij.JointH(FNs);
 
 	CImageSurf is;
-	//is.Surf("E:\\0.DEL\\2\\1.bmp", "E:\\0.DEL\\2\\2.bmp");
-	//is.Surf2("E:\\0.DEL\\2\\1.bmp", "E:\\0.DEL\\2\\2.bmp");
-	is.Surf3("E:\\0.DEL\\2\\1.bmp", "E:\\0.DEL\\2\\2.bmp");
+	is.Surf("E:\\0.DEL\\2\\img_0_7_100.bmp", "E:\\0.DEL\\2\\img_0_8_100.bmp");
+	//is.Surf3("E:\\0.DEL\\2\\2.bmp", "E:\\0.DEL\\2\\1.bmp");
 
 	//ShowImage("E:\\0.DEL\\1\\img_Merge_5.bmp");
 
